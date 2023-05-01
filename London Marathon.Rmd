@@ -1,0 +1,31 @@
+---
+title: "London Marathon"
+author: "FrankieBrook"
+date: "2023-05-01"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE, include=FALSE}
+#bringing in the data
+
+tuesdata <- tidytuesdayR::tt_load('2023-04-25')
+tuesdata <- tidytuesdayR::tt_load(2023, week = 17)
+
+winners <- tuesdata$winners
+london_marathon <- tuesdata$london_marathon
+```
+## What is the data
+The data this week comes from Nicola Rennie's LondonMarathon R package. This is an R package containing two data sets scraped from Wikipedia (1 November 2022) on London Marathon winners, and some general data. How the dataset was created, and some analysis, is described in Nicola's post "Scraping London Marathon data with {rvest}". 
+
+### Investigation I'd like to do
+
+1. See if the time difference between men & women has changed in both wheelchair & non-wheelchair
+2. See if time difference between wheelchair & non-wheelchair has changed
+
+```{r, echo=FALSE, include=FALSE}
+# Create a column to include time difference between a)men & women of the same year, and whether in a wheelchair b)womens wheelchair Vs non-wheelchair c) mens wheelchair Vs non-wheelchair
+
